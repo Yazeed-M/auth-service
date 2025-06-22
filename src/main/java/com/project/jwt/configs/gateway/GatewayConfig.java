@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class GatewayConfig {
     
     @Bean
-    public RouteLocator customRouteLocater(RouteLocatorBuilder builder){
+    public RouteLocator costumRouteLocater(RouteLocatorBuilder builder){
         return builder.routes()
                .route("user-service", r -> r.path("/api/v1/**")
                        .uri("http://localhost:8080"))

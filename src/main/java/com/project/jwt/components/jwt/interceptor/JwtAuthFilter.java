@@ -27,7 +27,6 @@ public class JwtAuthFilter implements GlobalFilter, Ordered {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String path = exchange.getRequest().getPath().value();
 
-        // ✅ Skip public endpoints
         if (!path.startsWith("/api/v1/private")) {
             return chain.filter(exchange);
         }
